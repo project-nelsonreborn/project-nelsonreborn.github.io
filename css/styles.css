@@ -1,0 +1,312 @@
+:root {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --accent-color: #2ec7ff;
+  --hover-color: #2e9dff;
+  --card-bg: #1e1e1e;
+  --separator: rgba(84, 46, 255, 0.2);
+  --tag-bg: rgba(70, 46, 255, 0.1);
+  --tag-bg-unmaintained: rgba(255, 100, 100, 0.1);
+  --code-font: "JetBrains Mono", "Fira Code", "Cascadia Code", "Source Code Pro", Consolas, monospace;
+  --success-color: #64ff64;
+  --warning-color: #ff2e2e;
+  --error-color: #ff6464;
+}
+
+.link {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px dotted var(--accent-color);
+  padding-bottom: 1px;
+}
+
+.link:hover {
+  color: var(--hover-color);
+  border-bottom: 1px solid var(--hover-color);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--code-font);
+  line-height: 1.6;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+.container {
+  padding: 1rem;
+}
+
+.intro {
+  background-color: var(--card-bg);
+  border-left: 3px solid var(--accent-color);
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.subheader {
+  color: var(--accent-color);
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--separator);
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.version-tag {
+  font-size: 0.8rem;
+  background-color: var(--tag-bg);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-weight: normal;
+  display: inline-block;
+  border: 1px solid var(--separator);
+}
+
+.version-tag-unmaintained {
+  font-size: 0.8rem;
+  background-color: var(--tag-bg-unmaintained);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-weight: normal;
+  display: inline-block;
+  border: 1px solid var(--separator);
+}
+
+.version-card {
+  background-color: var(--card-bg);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--card-bg);
+}
+
+.version-list {
+  list-style-type: none;
+}
+
+.version-item {
+  margin: 1.2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.main-link {
+  color: var(--bg-color);
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  display: inline-block;
+  transition: all 0.2s ease;
+  background-color: var(--accent-color);
+  font-weight: 600;
+  min-width: 200px;
+  text-align: center;
+}
+
+.main-link:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+.download-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  display: inline-block;
+  transition: all 0.2s ease;
+  background-color: var(--tag-bg);
+  border: 1px solid var(--separator);
+  font-size: 0.9em;
+}
+
+.download-link:hover {
+  background-color: rgba(255, 181, 46, 0.2);
+  transform: translateY(-2px);
+}
+
+.easter-egg {
+  opacity: 0.2;
+  font-size: 0.85em;
+}
+
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(224, 224, 224, 0.6);
+  padding: 1rem;
+  border-top: 1px solid var(--separator);
+}
+
+code {
+  background: rgba(255, 181, 46, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: var(--code-font);
+}
+
+@media (max-width: 700px) {
+  body {
+    padding: 1rem;
+  }
+
+  .version-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .main-link,
+  .download-link {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.suggested-box {
+  background-color: var(--card-bg);
+  border-left: 3px solid var(--accent-color);
+  border-radius: 0 4px 4px 0;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  display: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.suggested-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 0 4px 4px 0;
+  animation: pulse 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 181, 46, 0.2);
+    border-color: rgba(255, 181, 46, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 10px 0 rgba(255, 181, 46, 0.4);
+    border-color: rgba(255, 181, 46, 0.6);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 181, 46, 0.2);
+    border-color: rgba(255, 181, 46, 0.2);
+  }
+}
+
+.suggested-title {
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.suggested-title svg {
+  margin-right: 0.7rem;
+}
+
+.suggested-button {
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+.suggested-button .main-link {
+  min-width: 240px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.browser-note {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background-color: rgba(255, 181, 46, 0.1);
+  border-left: 2px solid var(--accent-color);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.offline-notification {
+  background-color: rgba(255, 181, 46, 0.15);
+  border-left: 3px solid var(--accent-color);
+  border-radius: 0 4px 4px 0;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 2rem;
+  display: none;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.offline-icon {
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.offline-message {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.header {
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--accent-color);
+  padding-bottom: 1rem;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-icon {
+  height: 1em;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
