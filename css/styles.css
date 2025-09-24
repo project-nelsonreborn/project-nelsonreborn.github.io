@@ -1,5 +1,5 @@
 :root {
-  --bg-color: #121212;
+  --bg-color: #000;
   --text-color: #e0e0e0;
   --accent-color: #2ec7ff;
   --hover-color: #2e9dff;
@@ -12,6 +12,7 @@
   --warning-color: #ff2e2e;
   --error-color: #ff6464;
 }
+
 
 .link {
   color: var(--accent-color);
