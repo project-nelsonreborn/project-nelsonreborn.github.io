@@ -1,9 +1,9 @@
 :root {
-  --bg-color: #000;
   --text-color: #e0e0e0;
   --accent-color: #2ec7ff;
   --hover-color: #2e9dff;
   --card-bg: #1e1e1e;
+  --border-color: #bababa74;
   --separator: rgba(84, 46, 255, 0.2);
   --tag-bg: rgba(70, 46, 255, 0.1);
   --tag-bg-unmaintained: rgba(255, 100, 100, 0.1);
@@ -11,6 +11,9 @@
   --success-color: #64ff64;
   --warning-color: #ff2e2e;
   --error-color: #ff6464;
+  background-image: url('../images/533316.jpg');
+  background-repeat:no-repeat;
+  background-size:cover;
 }
 
 
@@ -93,8 +96,16 @@ body {
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--card-bg);
+  border: 1px solid var(--border-color);
+   --border-width: 1px;
+  border-radius: 1rem;
+  position: relative;
+
+  background: hsl(from var(--surface-3) h s l / 0.25);
+  backdrop-filter: blur(9px);
 }
+
+
 
 .version-list {
   list-style-type: none;
@@ -311,3 +322,8 @@ code {
   margin-right: 0.5em;
   vertical-align: middle;
 }
+
+.hero {
+  background-image: url('../images/533316.jpg');
+}
+
